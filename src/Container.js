@@ -4,7 +4,7 @@ import XSquareBox from './XSquareBox'
 
 const Container = (props) => {
     const {scale, start} = useAnimatedScale()
-    const {w, h} = useDimensio()
+    const {w, h} = useDimension()
     return (
         <div>
             <XSquareBox 

@@ -17,7 +17,9 @@ export const useAnimatedScale = () => {
                             setScale(0)
                             setAnimated(false)
                             clearInterval(interval)
+                            return 0 
                         }
+                        return prevScale + scGap 
                     })
                 }, delay)
             }
@@ -47,7 +49,7 @@ export const useStyle = (w, h, scale) => {
     const top = `${h / 2}px`
     const color = `indigo`
     
-    const sf = Math.sin(Math.PI / 180 * scale)
+    const sf = Math.sin(Math.PI * scale)
     return {
         parentStyle() {
             return {
@@ -75,10 +77,11 @@ export const useStyle = (w, h, scale) => {
             const left = `${-size / 2}px`
             const top = `0px`
             const background = color 
-            const width = `${size}px`
+            const width = `${size + (size / 15)}px`
             const height = `${size / 15}px`
             const WebkitTransform = `rotate(${45 * (1 - 2 * i) * sf}deg)`
             return {
+                position,
                 left,
                 width,
                 top, 

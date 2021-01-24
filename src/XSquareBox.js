@@ -1,7 +1,7 @@
 import React from 'react'
 import {useStyle} from './hooks'
 
-const Line = (i, styleCb) => (<div style = {styleCb(i)}></div>)
+const Line = ({i, styleCb}) => (<div style = {styleCb(i)}></div>)
 
 const XSquareBox = ({scale, w, h, onClick}) => {
     const { parentStyle, lineStyle, boxStyle } = useStyle(w, h, scale)
